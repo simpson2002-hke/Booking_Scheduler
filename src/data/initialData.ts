@@ -162,10 +162,39 @@ const normalizeScheduler = (scheduler: Scheduler): Scheduler => {
   };
 };
 
+
+const sanitizeScheduler = (rawScheduler: Partial<Scheduler>): Scheduler => {
+  const defaultConfig = buildDefaultConfig();
+  const rawConfig = (rawScheduler as any).config as Partial<SchedulerConfig> | undefined;
+
+  const config: SchedulerConfig = {
+    ...defaultConfig,
+    ...rawConfig,
+    id: rawConfig?.id ?? `config-${Date.now()}`,
+    name: rawConfig?.name ?? rawScheduler.name ?? defaultConfig.name,
+  };
+
+  const scheduler = createScheduler(rawScheduler.name ?? config.name, config);
+
+  return normalizeScheduler({
+    ...scheduler,
+    ...rawScheduler,
+    id: rawScheduler.id ?? scheduler.id,
+    name: rawScheduler.name ?? scheduler.name,
+    submissions: Array.isArray(rawScheduler.submissions) ? rawScheduler.submissions : [],
+    dateSlots: Array.isArray(rawScheduler.dateSlots) ? rawScheduler.dateSlots : scheduler.dateSlots,
+    dateTimeSlots: Array.isArray(rawScheduler.dateTimeSlots)
+      ? rawScheduler.dateTimeSlots
+      : scheduler.dateTimeSlots,
+    pageTitle: rawScheduler.pageTitle ?? scheduler.pageTitle,
+    pageDescription: rawScheduler.pageDescription ?? scheduler.pageDescription,
+    emailTemplateSubject: rawScheduler.emailTemplateSubject ?? scheduler.emailTemplateSubject,
+    emailTemplateBody: rawScheduler.emailTemplateBody ?? scheduler.emailTemplateBody,
+    config,
+  });
+};
+
 const migrateLegacyState = (parsed: Partial<BookingState>): BookingState | null => {
-  if ('schedulers' in parsed && parsed.schedulers) {
-    return parsed as BookingState;
-  }
   if ('submissions' in parsed || 'dateSlots' in parsed || 'dateTimeSlots' in parsed) {
     const config = buildDefaultConfig();
     const scheduler: Scheduler = {
@@ -208,23 +237,32 @@ export const getInitialState = (): BookingState => {
       if (migrated) {
         return migrated;
       }
-      if (parsed.schedulers && parsed.activeSchedulerId) {
-        const normalizedSchedulers = parsed.schedulers.map(normalizeScheduler);
-        if (normalizedSchedulers.length === 0) {
+      if (Array.isArray(parsed.schedulers)) {
+        const sanitizedSchedulers = parsed.schedulers
+          .map((scheduler) => {
+            try {
+              return sanitizeScheduler(scheduler as Partial<Scheduler>);
+            } catch {
+              return null;
+            }
+          })
+          .filter((scheduler): scheduler is Scheduler => scheduler !== null);
+
+        if (sanitizedSchedulers.length === 0) {
           return createFallbackState();
         }
 
-        const hasActiveScheduler = normalizedSchedulers.some(
+        const hasActiveScheduler = sanitizedSchedulers.some(
           (scheduler) => scheduler.id === parsed.activeSchedulerId
         );
 
         return {
-          schedulers: normalizedSchedulers,
+          schedulers: sanitizedSchedulers,
           activeSchedulerId: hasActiveScheduler
-            ? parsed.activeSchedulerId
-            : normalizedSchedulers[0].id,
+            ? parsed.activeSchedulerId ?? sanitizedSchedulers[0].id
+            : sanitizedSchedulers[0].id,
           adminPasscode: parsed.adminPasscode ?? DEFAULT_ADMIN_PASSCODE,
-        } as BookingState;
+        };
       }
     } catch {
       // ignore parsing errors
