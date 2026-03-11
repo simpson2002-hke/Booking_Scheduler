@@ -1,0 +1,1866 @@
+{
+  "state": {
+    "schedulers": [
+      {
+        "id": "scheduler-1773270223855-bjw0q",
+        "name": "Default Schedule",
+        "submissions": [],
+        "dateSlots": [
+          {
+            "id": "date-2026-05-01",
+            "label": "Fri, May 1",
+            "date": "2026-05-01",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-04",
+            "label": "Mon, May 4",
+            "date": "2026-05-04",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-05",
+            "label": "Tue, May 5",
+            "date": "2026-05-05",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-06",
+            "label": "Wed, May 6",
+            "date": "2026-05-06",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-07",
+            "label": "Thu, May 7",
+            "date": "2026-05-07",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-08",
+            "label": "Fri, May 8",
+            "date": "2026-05-08",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-11",
+            "label": "Mon, May 11",
+            "date": "2026-05-11",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-12",
+            "label": "Tue, May 12",
+            "date": "2026-05-12",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-13",
+            "label": "Wed, May 13",
+            "date": "2026-05-13",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-14",
+            "label": "Thu, May 14",
+            "date": "2026-05-14",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-15",
+            "label": "Fri, May 15",
+            "date": "2026-05-15",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-18",
+            "label": "Mon, May 18",
+            "date": "2026-05-18",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-19",
+            "label": "Tue, May 19",
+            "date": "2026-05-19",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-20",
+            "label": "Wed, May 20",
+            "date": "2026-05-20",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-21",
+            "label": "Thu, May 21",
+            "date": "2026-05-21",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-22",
+            "label": "Fri, May 22",
+            "date": "2026-05-22",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-25",
+            "label": "Mon, May 25",
+            "date": "2026-05-25",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-26",
+            "label": "Tue, May 26",
+            "date": "2026-05-26",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-27",
+            "label": "Wed, May 27",
+            "date": "2026-05-27",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-28",
+            "label": "Thu, May 28",
+            "date": "2026-05-28",
+            "currentBookings": 0,
+            "maxBookings": 40
+          },
+          {
+            "id": "date-2026-05-29",
+            "label": "Fri, May 29",
+            "date": "2026-05-29",
+            "currentBookings": 0,
+            "maxBookings": 40
+          }
+        ],
+        "dateTimeSlots": [
+          {
+            "id": "date-2026-05-01-0930",
+            "dateId": "date-2026-05-01",
+            "dateLabel": "Fri, May 1",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-01-1030",
+            "dateId": "date-2026-05-01",
+            "dateLabel": "Fri, May 1",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-01-1130",
+            "dateId": "date-2026-05-01",
+            "dateLabel": "Fri, May 1",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-01-1230",
+            "dateId": "date-2026-05-01",
+            "dateLabel": "Fri, May 1",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-01-1330",
+            "dateId": "date-2026-05-01",
+            "dateLabel": "Fri, May 1",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-01-1430",
+            "dateId": "date-2026-05-01",
+            "dateLabel": "Fri, May 1",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-01-1530",
+            "dateId": "date-2026-05-01",
+            "dateLabel": "Fri, May 1",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-01-1630",
+            "dateId": "date-2026-05-01",
+            "dateLabel": "Fri, May 1",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-04-0930",
+            "dateId": "date-2026-05-04",
+            "dateLabel": "Mon, May 4",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-04-1030",
+            "dateId": "date-2026-05-04",
+            "dateLabel": "Mon, May 4",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-04-1130",
+            "dateId": "date-2026-05-04",
+            "dateLabel": "Mon, May 4",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-04-1230",
+            "dateId": "date-2026-05-04",
+            "dateLabel": "Mon, May 4",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-04-1330",
+            "dateId": "date-2026-05-04",
+            "dateLabel": "Mon, May 4",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-04-1430",
+            "dateId": "date-2026-05-04",
+            "dateLabel": "Mon, May 4",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-04-1530",
+            "dateId": "date-2026-05-04",
+            "dateLabel": "Mon, May 4",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-04-1630",
+            "dateId": "date-2026-05-04",
+            "dateLabel": "Mon, May 4",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-05-0930",
+            "dateId": "date-2026-05-05",
+            "dateLabel": "Tue, May 5",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-05-1030",
+            "dateId": "date-2026-05-05",
+            "dateLabel": "Tue, May 5",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-05-1130",
+            "dateId": "date-2026-05-05",
+            "dateLabel": "Tue, May 5",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-05-1230",
+            "dateId": "date-2026-05-05",
+            "dateLabel": "Tue, May 5",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-05-1330",
+            "dateId": "date-2026-05-05",
+            "dateLabel": "Tue, May 5",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-05-1430",
+            "dateId": "date-2026-05-05",
+            "dateLabel": "Tue, May 5",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-05-1530",
+            "dateId": "date-2026-05-05",
+            "dateLabel": "Tue, May 5",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-05-1630",
+            "dateId": "date-2026-05-05",
+            "dateLabel": "Tue, May 5",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-06-0930",
+            "dateId": "date-2026-05-06",
+            "dateLabel": "Wed, May 6",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-06-1030",
+            "dateId": "date-2026-05-06",
+            "dateLabel": "Wed, May 6",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-06-1130",
+            "dateId": "date-2026-05-06",
+            "dateLabel": "Wed, May 6",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-06-1230",
+            "dateId": "date-2026-05-06",
+            "dateLabel": "Wed, May 6",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-06-1330",
+            "dateId": "date-2026-05-06",
+            "dateLabel": "Wed, May 6",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-06-1430",
+            "dateId": "date-2026-05-06",
+            "dateLabel": "Wed, May 6",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-06-1530",
+            "dateId": "date-2026-05-06",
+            "dateLabel": "Wed, May 6",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-06-1630",
+            "dateId": "date-2026-05-06",
+            "dateLabel": "Wed, May 6",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-07-0930",
+            "dateId": "date-2026-05-07",
+            "dateLabel": "Thu, May 7",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-07-1030",
+            "dateId": "date-2026-05-07",
+            "dateLabel": "Thu, May 7",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-07-1130",
+            "dateId": "date-2026-05-07",
+            "dateLabel": "Thu, May 7",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-07-1230",
+            "dateId": "date-2026-05-07",
+            "dateLabel": "Thu, May 7",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-07-1330",
+            "dateId": "date-2026-05-07",
+            "dateLabel": "Thu, May 7",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-07-1430",
+            "dateId": "date-2026-05-07",
+            "dateLabel": "Thu, May 7",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-07-1530",
+            "dateId": "date-2026-05-07",
+            "dateLabel": "Thu, May 7",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-07-1630",
+            "dateId": "date-2026-05-07",
+            "dateLabel": "Thu, May 7",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-08-0930",
+            "dateId": "date-2026-05-08",
+            "dateLabel": "Fri, May 8",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-08-1030",
+            "dateId": "date-2026-05-08",
+            "dateLabel": "Fri, May 8",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-08-1130",
+            "dateId": "date-2026-05-08",
+            "dateLabel": "Fri, May 8",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-08-1230",
+            "dateId": "date-2026-05-08",
+            "dateLabel": "Fri, May 8",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-08-1330",
+            "dateId": "date-2026-05-08",
+            "dateLabel": "Fri, May 8",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-08-1430",
+            "dateId": "date-2026-05-08",
+            "dateLabel": "Fri, May 8",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-08-1530",
+            "dateId": "date-2026-05-08",
+            "dateLabel": "Fri, May 8",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-08-1630",
+            "dateId": "date-2026-05-08",
+            "dateLabel": "Fri, May 8",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-11-0930",
+            "dateId": "date-2026-05-11",
+            "dateLabel": "Mon, May 11",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-11-1030",
+            "dateId": "date-2026-05-11",
+            "dateLabel": "Mon, May 11",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-11-1130",
+            "dateId": "date-2026-05-11",
+            "dateLabel": "Mon, May 11",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-11-1230",
+            "dateId": "date-2026-05-11",
+            "dateLabel": "Mon, May 11",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-11-1330",
+            "dateId": "date-2026-05-11",
+            "dateLabel": "Mon, May 11",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-11-1430",
+            "dateId": "date-2026-05-11",
+            "dateLabel": "Mon, May 11",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-11-1530",
+            "dateId": "date-2026-05-11",
+            "dateLabel": "Mon, May 11",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-11-1630",
+            "dateId": "date-2026-05-11",
+            "dateLabel": "Mon, May 11",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-12-0930",
+            "dateId": "date-2026-05-12",
+            "dateLabel": "Tue, May 12",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-12-1030",
+            "dateId": "date-2026-05-12",
+            "dateLabel": "Tue, May 12",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-12-1130",
+            "dateId": "date-2026-05-12",
+            "dateLabel": "Tue, May 12",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-12-1230",
+            "dateId": "date-2026-05-12",
+            "dateLabel": "Tue, May 12",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-12-1330",
+            "dateId": "date-2026-05-12",
+            "dateLabel": "Tue, May 12",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-12-1430",
+            "dateId": "date-2026-05-12",
+            "dateLabel": "Tue, May 12",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-12-1530",
+            "dateId": "date-2026-05-12",
+            "dateLabel": "Tue, May 12",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-12-1630",
+            "dateId": "date-2026-05-12",
+            "dateLabel": "Tue, May 12",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-13-0930",
+            "dateId": "date-2026-05-13",
+            "dateLabel": "Wed, May 13",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-13-1030",
+            "dateId": "date-2026-05-13",
+            "dateLabel": "Wed, May 13",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-13-1130",
+            "dateId": "date-2026-05-13",
+            "dateLabel": "Wed, May 13",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-13-1230",
+            "dateId": "date-2026-05-13",
+            "dateLabel": "Wed, May 13",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-13-1330",
+            "dateId": "date-2026-05-13",
+            "dateLabel": "Wed, May 13",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-13-1430",
+            "dateId": "date-2026-05-13",
+            "dateLabel": "Wed, May 13",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-13-1530",
+            "dateId": "date-2026-05-13",
+            "dateLabel": "Wed, May 13",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-13-1630",
+            "dateId": "date-2026-05-13",
+            "dateLabel": "Wed, May 13",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-14-0930",
+            "dateId": "date-2026-05-14",
+            "dateLabel": "Thu, May 14",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-14-1030",
+            "dateId": "date-2026-05-14",
+            "dateLabel": "Thu, May 14",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-14-1130",
+            "dateId": "date-2026-05-14",
+            "dateLabel": "Thu, May 14",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-14-1230",
+            "dateId": "date-2026-05-14",
+            "dateLabel": "Thu, May 14",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-14-1330",
+            "dateId": "date-2026-05-14",
+            "dateLabel": "Thu, May 14",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-14-1430",
+            "dateId": "date-2026-05-14",
+            "dateLabel": "Thu, May 14",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-14-1530",
+            "dateId": "date-2026-05-14",
+            "dateLabel": "Thu, May 14",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-14-1630",
+            "dateId": "date-2026-05-14",
+            "dateLabel": "Thu, May 14",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-15-0930",
+            "dateId": "date-2026-05-15",
+            "dateLabel": "Fri, May 15",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-15-1030",
+            "dateId": "date-2026-05-15",
+            "dateLabel": "Fri, May 15",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-15-1130",
+            "dateId": "date-2026-05-15",
+            "dateLabel": "Fri, May 15",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-15-1230",
+            "dateId": "date-2026-05-15",
+            "dateLabel": "Fri, May 15",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-15-1330",
+            "dateId": "date-2026-05-15",
+            "dateLabel": "Fri, May 15",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-15-1430",
+            "dateId": "date-2026-05-15",
+            "dateLabel": "Fri, May 15",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-15-1530",
+            "dateId": "date-2026-05-15",
+            "dateLabel": "Fri, May 15",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-15-1630",
+            "dateId": "date-2026-05-15",
+            "dateLabel": "Fri, May 15",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-18-0930",
+            "dateId": "date-2026-05-18",
+            "dateLabel": "Mon, May 18",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-18-1030",
+            "dateId": "date-2026-05-18",
+            "dateLabel": "Mon, May 18",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-18-1130",
+            "dateId": "date-2026-05-18",
+            "dateLabel": "Mon, May 18",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-18-1230",
+            "dateId": "date-2026-05-18",
+            "dateLabel": "Mon, May 18",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-18-1330",
+            "dateId": "date-2026-05-18",
+            "dateLabel": "Mon, May 18",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-18-1430",
+            "dateId": "date-2026-05-18",
+            "dateLabel": "Mon, May 18",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-18-1530",
+            "dateId": "date-2026-05-18",
+            "dateLabel": "Mon, May 18",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-18-1630",
+            "dateId": "date-2026-05-18",
+            "dateLabel": "Mon, May 18",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-19-0930",
+            "dateId": "date-2026-05-19",
+            "dateLabel": "Tue, May 19",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-19-1030",
+            "dateId": "date-2026-05-19",
+            "dateLabel": "Tue, May 19",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-19-1130",
+            "dateId": "date-2026-05-19",
+            "dateLabel": "Tue, May 19",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-19-1230",
+            "dateId": "date-2026-05-19",
+            "dateLabel": "Tue, May 19",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-19-1330",
+            "dateId": "date-2026-05-19",
+            "dateLabel": "Tue, May 19",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-19-1430",
+            "dateId": "date-2026-05-19",
+            "dateLabel": "Tue, May 19",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-19-1530",
+            "dateId": "date-2026-05-19",
+            "dateLabel": "Tue, May 19",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-19-1630",
+            "dateId": "date-2026-05-19",
+            "dateLabel": "Tue, May 19",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-20-0930",
+            "dateId": "date-2026-05-20",
+            "dateLabel": "Wed, May 20",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-20-1030",
+            "dateId": "date-2026-05-20",
+            "dateLabel": "Wed, May 20",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-20-1130",
+            "dateId": "date-2026-05-20",
+            "dateLabel": "Wed, May 20",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-20-1230",
+            "dateId": "date-2026-05-20",
+            "dateLabel": "Wed, May 20",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-20-1330",
+            "dateId": "date-2026-05-20",
+            "dateLabel": "Wed, May 20",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-20-1430",
+            "dateId": "date-2026-05-20",
+            "dateLabel": "Wed, May 20",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-20-1530",
+            "dateId": "date-2026-05-20",
+            "dateLabel": "Wed, May 20",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-20-1630",
+            "dateId": "date-2026-05-20",
+            "dateLabel": "Wed, May 20",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-21-0930",
+            "dateId": "date-2026-05-21",
+            "dateLabel": "Thu, May 21",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-21-1030",
+            "dateId": "date-2026-05-21",
+            "dateLabel": "Thu, May 21",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-21-1130",
+            "dateId": "date-2026-05-21",
+            "dateLabel": "Thu, May 21",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-21-1230",
+            "dateId": "date-2026-05-21",
+            "dateLabel": "Thu, May 21",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-21-1330",
+            "dateId": "date-2026-05-21",
+            "dateLabel": "Thu, May 21",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-21-1430",
+            "dateId": "date-2026-05-21",
+            "dateLabel": "Thu, May 21",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-21-1530",
+            "dateId": "date-2026-05-21",
+            "dateLabel": "Thu, May 21",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-21-1630",
+            "dateId": "date-2026-05-21",
+            "dateLabel": "Thu, May 21",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-22-0930",
+            "dateId": "date-2026-05-22",
+            "dateLabel": "Fri, May 22",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-22-1030",
+            "dateId": "date-2026-05-22",
+            "dateLabel": "Fri, May 22",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-22-1130",
+            "dateId": "date-2026-05-22",
+            "dateLabel": "Fri, May 22",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-22-1230",
+            "dateId": "date-2026-05-22",
+            "dateLabel": "Fri, May 22",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-22-1330",
+            "dateId": "date-2026-05-22",
+            "dateLabel": "Fri, May 22",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-22-1430",
+            "dateId": "date-2026-05-22",
+            "dateLabel": "Fri, May 22",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-22-1530",
+            "dateId": "date-2026-05-22",
+            "dateLabel": "Fri, May 22",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-22-1630",
+            "dateId": "date-2026-05-22",
+            "dateLabel": "Fri, May 22",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-25-0930",
+            "dateId": "date-2026-05-25",
+            "dateLabel": "Mon, May 25",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-25-1030",
+            "dateId": "date-2026-05-25",
+            "dateLabel": "Mon, May 25",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-25-1130",
+            "dateId": "date-2026-05-25",
+            "dateLabel": "Mon, May 25",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-25-1230",
+            "dateId": "date-2026-05-25",
+            "dateLabel": "Mon, May 25",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-25-1330",
+            "dateId": "date-2026-05-25",
+            "dateLabel": "Mon, May 25",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-25-1430",
+            "dateId": "date-2026-05-25",
+            "dateLabel": "Mon, May 25",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-25-1530",
+            "dateId": "date-2026-05-25",
+            "dateLabel": "Mon, May 25",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-25-1630",
+            "dateId": "date-2026-05-25",
+            "dateLabel": "Mon, May 25",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-26-0930",
+            "dateId": "date-2026-05-26",
+            "dateLabel": "Tue, May 26",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-26-1030",
+            "dateId": "date-2026-05-26",
+            "dateLabel": "Tue, May 26",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-26-1130",
+            "dateId": "date-2026-05-26",
+            "dateLabel": "Tue, May 26",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-26-1230",
+            "dateId": "date-2026-05-26",
+            "dateLabel": "Tue, May 26",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-26-1330",
+            "dateId": "date-2026-05-26",
+            "dateLabel": "Tue, May 26",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-26-1430",
+            "dateId": "date-2026-05-26",
+            "dateLabel": "Tue, May 26",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-26-1530",
+            "dateId": "date-2026-05-26",
+            "dateLabel": "Tue, May 26",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-26-1630",
+            "dateId": "date-2026-05-26",
+            "dateLabel": "Tue, May 26",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-27-0930",
+            "dateId": "date-2026-05-27",
+            "dateLabel": "Wed, May 27",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-27-1030",
+            "dateId": "date-2026-05-27",
+            "dateLabel": "Wed, May 27",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-27-1130",
+            "dateId": "date-2026-05-27",
+            "dateLabel": "Wed, May 27",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-27-1230",
+            "dateId": "date-2026-05-27",
+            "dateLabel": "Wed, May 27",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-27-1330",
+            "dateId": "date-2026-05-27",
+            "dateLabel": "Wed, May 27",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-27-1430",
+            "dateId": "date-2026-05-27",
+            "dateLabel": "Wed, May 27",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-27-1530",
+            "dateId": "date-2026-05-27",
+            "dateLabel": "Wed, May 27",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-27-1630",
+            "dateId": "date-2026-05-27",
+            "dateLabel": "Wed, May 27",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-28-0930",
+            "dateId": "date-2026-05-28",
+            "dateLabel": "Thu, May 28",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-28-1030",
+            "dateId": "date-2026-05-28",
+            "dateLabel": "Thu, May 28",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-28-1130",
+            "dateId": "date-2026-05-28",
+            "dateLabel": "Thu, May 28",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-28-1230",
+            "dateId": "date-2026-05-28",
+            "dateLabel": "Thu, May 28",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-28-1330",
+            "dateId": "date-2026-05-28",
+            "dateLabel": "Thu, May 28",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-28-1430",
+            "dateId": "date-2026-05-28",
+            "dateLabel": "Thu, May 28",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-28-1530",
+            "dateId": "date-2026-05-28",
+            "dateLabel": "Thu, May 28",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-28-1630",
+            "dateId": "date-2026-05-28",
+            "dateLabel": "Thu, May 28",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-29-0930",
+            "dateId": "date-2026-05-29",
+            "dateLabel": "Fri, May 29",
+            "label": "09:30 - 10:30",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-29-1030",
+            "dateId": "date-2026-05-29",
+            "dateLabel": "Fri, May 29",
+            "label": "10:30 - 11:30",
+            "startTime": "10:30",
+            "endTime": "11:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-29-1130",
+            "dateId": "date-2026-05-29",
+            "dateLabel": "Fri, May 29",
+            "label": "11:30 - 12:30",
+            "startTime": "11:30",
+            "endTime": "12:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-29-1230",
+            "dateId": "date-2026-05-29",
+            "dateLabel": "Fri, May 29",
+            "label": "12:30 - 13:30",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-29-1330",
+            "dateId": "date-2026-05-29",
+            "dateLabel": "Fri, May 29",
+            "label": "13:30 - 14:30",
+            "startTime": "13:30",
+            "endTime": "14:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-29-1430",
+            "dateId": "date-2026-05-29",
+            "dateLabel": "Fri, May 29",
+            "label": "14:30 - 15:30",
+            "startTime": "14:30",
+            "endTime": "15:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-29-1530",
+            "dateId": "date-2026-05-29",
+            "dateLabel": "Fri, May 29",
+            "label": "15:30 - 16:30",
+            "startTime": "15:30",
+            "endTime": "16:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          },
+          {
+            "id": "date-2026-05-29-1630",
+            "dateId": "date-2026-05-29",
+            "dateLabel": "Fri, May 29",
+            "label": "16:30 - 17:30",
+            "startTime": "16:30",
+            "endTime": "17:30",
+            "currentBookings": 0,
+            "maxBookings": 4
+          }
+        ],
+        "pageTitle": "Booking Request",
+        "pageDescription": "Add a short description for participants.",
+        "emailTemplateSubject": "Your booking is confirmed: {{slot}}",
+        "emailTemplateBody": "Hello {{name}},\n\nYour booking has been confirmed for {{slot}}.\nIf you have any further enquiries, please let us know.\n\nThank you.",
+        "config": {
+          "id": "config-1773270223853",
+          "name": "Default Schedule",
+          "maxSubmissions": 300,
+          "slotMaxBookings": 4,
+          "preferenceLimit": 5,
+          "startDate": "2026-04-30",
+          "endDate": "2026-05-30",
+          "excludeDates": [
+            "2026-04-30",
+            "2026-05-24"
+          ],
+          "startTime": "09:30",
+          "endTime": "17:30",
+          "slotDurationMinutes": 60,
+          "weekdaysOnly": true
+        }
+      }
+    ],
+    "activeSchedulerId": "scheduler-1773270223855-bjw0q",
+    "adminPasscode": "hkUO@852"
+  },
+  "updatedAt": "2026-03-11T23:03:44.106Z"
+}
