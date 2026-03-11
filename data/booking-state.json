@@ -20,7 +20,8 @@
             "allUnavailable": false,
             "id": "sub-1773270311845-vn2svsd",
             "emailSent": false,
-            "submittedAt": "2026-03-11T23:05:11.845Z"
+            "submittedAt": "2026-03-11T23:05:11.845Z",
+            "assignedSlotId": "date-2026-05-01-1330"
           }
         ],
         "dateSlots": [
@@ -28,7 +29,7 @@
             "id": "date-2026-05-01",
             "label": "Fri, May 1",
             "date": "2026-05-01",
-            "currentBookings": 3,
+            "currentBookings": 1,
             "maxBookings": 40
           },
           {
@@ -240,7 +241,7 @@
             "label": "15:30 - 16:30",
             "startTime": "15:30",
             "endTime": "16:30",
-            "currentBookings": 1,
+            "currentBookings": 0,
             "maxBookings": 4
           },
           {
@@ -250,7 +251,7 @@
             "label": "16:30 - 17:30",
             "startTime": "16:30",
             "endTime": "17:30",
-            "currentBookings": 1,
+            "currentBookings": 0,
             "maxBookings": 4
           },
           {
@@ -1880,5 +1881,5 @@
     "activeSchedulerId": "scheduler-1773270223855-bjw0q",
     "adminPasscode": "hkUO@852"
   },
-  "updatedAt": "2026-03-11T23:05:18.801Z"
+  "updatedAt": "2026-03-11T23:06:57.254Z"
 }
