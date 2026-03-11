@@ -1,12 +1,24 @@
-export interface Env {
-  MONGODB_DATA_API_URL: string;
-  MONGODB_DATA_API_KEY: string;
-  MONGODB_DATA_SOURCE: string;
-  MONGODB_DATABASE: string;
-  MONGODB_COLLECTION: string;
-  MONGODB_DOCUMENT_ID?: string;
-  API_KEY?: string;
-}
+type BindingName =
+  | 'MONGODB_DATA_API_URL'
+  | 'MONGODB_DATA_API_KEY'
+  | 'MONGODB_DATA_SOURCE'
+  | 'MONGODB_DATABASE'
+  | 'MONGODB_COLLECTION'
+  | 'MONGODB_DOCUMENT_ID'
+  | 'API_KEY';
+
+const getBinding = (name: BindingName): string | undefined => {
+  const value = (globalThis as Record<string, unknown>)[name];
+  return typeof value === 'string' && value.trim().length > 0 ? value : undefined;
+};
+
+const getRequiredBinding = (name: Exclude<BindingName, 'MONGODB_DOCUMENT_ID' | 'API_KEY'>): string => {
+  const value = getBinding(name);
+  if (!value) {
+    throw new Error(`Missing required binding: ${name}`);
+  }
+  return value;
+};
 
 const json = (data: unknown, init?: ResponseInit) =>
   new Response(JSON.stringify(data), {
@@ -20,8 +32,9 @@ const json = (data: unknown, init?: ResponseInit) =>
     },
   });
 
-const isAuthorized = (request: Request, env: Env) => {
-  if (!env.API_KEY) {
+const isAuthorized = (request: Request) => {
+  const apiKey = getBinding('API_KEY');
+  if (!apiKey) {
     return true;
   }
 
@@ -31,29 +44,23 @@ const isAuthorized = (request: Request, env: Env) => {
   }
 
   const token = authHeader.replace('Bearer ', '').trim();
-  return token === env.API_KEY;
+  return token === apiKey;
 };
 
-interface MongoDataApiResponse<T> {
-  document?: T;
-  modifiedCount?: number;
-  upsertedId?: unknown;
-  matchedCount?: number;
-}
+const getDocumentId = () => getBinding('MONGODB_DOCUMENT_ID') ?? 'booking-scheduler-state';
 
-const getDocumentId = (env: Env) => env.MONGODB_DOCUMENT_ID ?? 'booking-scheduler-state';
-
-const mongoRequest = async <T>(env: Env, action: string, body: Record<string, unknown>): Promise<T> => {
-  const response = await fetch(`${env.MONGODB_DATA_API_URL.replace(/\/$/, '')}/action/${action}`, {
+const mongoRequest = async <T>(action: string, body: Record<string, unknown>): Promise<T> => {
+  const dataApiUrl = getRequiredBinding('MONGODB_DATA_API_URL').replace(/\/$/, '');
+  const response = await fetch(`${dataApiUrl}/action/${action}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'api-key': env.MONGODB_DATA_API_KEY,
+      'api-key': getRequiredBinding('MONGODB_DATA_API_KEY'),
     },
     body: JSON.stringify({
-      dataSource: env.MONGODB_DATA_SOURCE,
-      database: env.MONGODB_DATABASE,
-      collection: env.MONGODB_COLLECTION,
+      dataSource: getRequiredBinding('MONGODB_DATA_SOURCE'),
+      database: getRequiredBinding('MONGODB_DATABASE'),
+      collection: getRequiredBinding('MONGODB_COLLECTION'),
       ...body,
     }),
   });
@@ -66,18 +73,18 @@ const mongoRequest = async <T>(env: Env, action: string, body: Record<string, un
   return (await response.json()) as T;
 };
 
-const getMongoState = async (env: Env) => {
-  const result = await mongoRequest<MongoDataApiResponse<{ state?: unknown }>>(env, 'findOne', {
-    filter: { _id: getDocumentId(env) },
+const getMongoState = async () => {
+  const result = await mongoRequest<{ document?: { state?: unknown } }>('findOne', {
+    filter: { _id: getDocumentId() },
     projection: { state: 1, _id: 0 },
   });
 
   return result.document?.state ?? null;
 };
 
-const putMongoState = async (env: Env, state: unknown) => {
-  await mongoRequest<MongoDataApiResponse<unknown>>(env, 'updateOne', {
-    filter: { _id: getDocumentId(env) },
+const putMongoState = async (state: unknown) => {
+  await mongoRequest('updateOne', {
+    filter: { _id: getDocumentId() },
     update: {
       $set: {
         state,
@@ -88,40 +95,42 @@ const putMongoState = async (env: Env, state: unknown) => {
   });
 };
 
-export default {
-  async fetch(request, env): Promise<Response> {
-    if (request.method === 'OPTIONS') {
-      return json({}, { status: 200 });
-    }
+const handleRequest = async (request: Request): Promise<Response> => {
+  if (request.method === 'OPTIONS') {
+    return json({}, { status: 200 });
+  }
 
-    if (!isAuthorized(request, env)) {
-      return json({ error: 'Unauthorized' }, { status: 401 });
-    }
+  if (!isAuthorized(request)) {
+    return json({ error: 'Unauthorized' }, { status: 401 });
+  }
 
-    try {
-      if (request.method === 'GET') {
-        const state = await getMongoState(env);
-        if (!state) {
-          return json({ state: null }, { status: 404 });
-        }
-
-        return json({ state });
+  try {
+    if (request.method === 'GET') {
+      const state = await getMongoState();
+      if (!state) {
+        return json({ state: null }, { status: 404 });
       }
 
-      if (request.method === 'PUT') {
-        const payload = (await request.json()) as { state?: unknown };
-        if (!payload.state) {
-          return json({ error: 'Missing state payload' }, { status: 400 });
-        }
+      return json({ state });
+    }
 
-        await putMongoState(env, payload.state);
-        return json({ ok: true });
+    if (request.method === 'PUT') {
+      const payload = (await request.json()) as { state?: unknown };
+      if (!payload.state) {
+        return json({ error: 'Missing state payload' }, { status: 400 });
       }
 
-      return json({ error: 'Method not allowed' }, { status: 405 });
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'Unknown error';
-      return json({ error: message }, { status: 500 });
+      await putMongoState(payload.state);
+      return json({ ok: true });
     }
-  },
-} satisfies ExportedHandler<Env>;
+
+    return json({ error: 'Method not allowed' }, { status: 405 });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    return json({ error: message }, { status: 500 });
+  }
+};
+
+addEventListener('fetch', (event: FetchEvent) => {
+  event.respondWith(handleRequest(event.request));
+});
