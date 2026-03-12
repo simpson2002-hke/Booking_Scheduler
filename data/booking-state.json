@@ -7,13 +7,6 @@
         "submissions": [],
         "dateSlots": [
           {
-            "id": "date-2026-04-30",
-            "label": "Thu, Apr 30",
-            "date": "2026-04-30",
-            "currentBookings": 0,
-            "maxBookings": 40
-          },
-          {
             "id": "date-2026-05-04",
             "label": "Mon, May 4",
             "date": "2026-05-04",
@@ -148,86 +141,6 @@
           }
         ],
         "dateTimeSlots": [
-          {
-            "id": "date-2026-04-30-0930",
-            "dateId": "date-2026-04-30",
-            "dateLabel": "Thu, Apr 30",
-            "label": "09:30 - 10:30",
-            "startTime": "09:30",
-            "endTime": "10:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-04-30-1030",
-            "dateId": "date-2026-04-30",
-            "dateLabel": "Thu, Apr 30",
-            "label": "10:30 - 11:30",
-            "startTime": "10:30",
-            "endTime": "11:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-04-30-1130",
-            "dateId": "date-2026-04-30",
-            "dateLabel": "Thu, Apr 30",
-            "label": "11:30 - 12:30",
-            "startTime": "11:30",
-            "endTime": "12:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-04-30-1230",
-            "dateId": "date-2026-04-30",
-            "dateLabel": "Thu, Apr 30",
-            "label": "12:30 - 13:30",
-            "startTime": "12:30",
-            "endTime": "13:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-04-30-1330",
-            "dateId": "date-2026-04-30",
-            "dateLabel": "Thu, Apr 30",
-            "label": "13:30 - 14:30",
-            "startTime": "13:30",
-            "endTime": "14:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-04-30-1430",
-            "dateId": "date-2026-04-30",
-            "dateLabel": "Thu, Apr 30",
-            "label": "14:30 - 15:30",
-            "startTime": "14:30",
-            "endTime": "15:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-04-30-1530",
-            "dateId": "date-2026-04-30",
-            "dateLabel": "Thu, Apr 30",
-            "label": "15:30 - 16:30",
-            "startTime": "15:30",
-            "endTime": "16:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-04-30-1630",
-            "dateId": "date-2026-04-30",
-            "dateLabel": "Thu, Apr 30",
-            "label": "16:30 - 17:30",
-            "startTime": "16:30",
-            "endTime": "17:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
           {
             "id": "date-2026-05-04-0930",
             "dateId": "date-2026-05-04",
@@ -1759,8 +1672,8 @@
           "maxSubmissions": 300,
           "slotMaxBookings": 4,
           "preferenceLimit": 5,
-          "startDate": "2026-04-30",
-          "endDate": "2026-05-30",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-29",
           "excludeDates": [
             "2026-05-01",
             "2026-05-24",
@@ -1776,5 +1689,5 @@
     "activeSchedulerId": "scheduler-1773270223855-bjw0q",
     "adminPasscode": "hkUO@852"
   },
-  "updatedAt": "2026-03-12T01:29:28.244Z"
+  "updatedAt": "2026-03-12T01:29:43.074Z"
 }
