@@ -15,6 +15,11 @@ const getCorsHeaders = (request) => {
   };
 };
 
+const isAllowedOrigin = (request) => {
+  const origin = request.headers.get('Origin');
+  return Boolean(origin && ALLOWED_ORIGINS.has(origin));
+};
+
 const json = (request, data, init = {}) =>
   new Response(JSON.stringify(data), {
     ...init,
@@ -27,7 +32,7 @@ const json = (request, data, init = {}) =>
 
 const isAuthorized = (request, env) => {
   if (!env.API_KEY) {
-    return true;
+    return false;
   }
 
   const authHeader = request.headers.get('Authorization');
@@ -144,7 +149,15 @@ const putGitHubState = async (env, state) => {
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') {
+      if (!isAllowedOrigin(request)) {
+        return json(request, { error: 'Forbidden origin' }, { status: 403 });
+      }
+
       return json(request, {}, { status: 200 });
+    }
+
+    if (!isAllowedOrigin(request)) {
+      return json(request, { error: 'Forbidden origin' }, { status: 403 });
     }
 
     if (!isAuthorized(request, env)) {
