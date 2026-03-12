@@ -4,104 +4,13 @@
       {
         "id": "scheduler-1773270223855-bjw0q",
         "name": "Default Schedule",
-        "submissions": [
-          {
-            "name": "test",
-            "email": "test@gmail.com",
-            "staffNumber": "1",
-            "preferredDateIds": [
-              "date-2026-05-01"
-            ],
-            "preferences": [
-              "date-2026-05-01-1330",
-              "date-2026-05-01-1530",
-              "date-2026-05-01-1630"
-            ],
-            "allUnavailable": false,
-            "id": "sub-1773270311845-vn2svsd",
-            "emailSent": true,
-            "submittedAt": "2026-03-11T23:05:11.845Z",
-            "assignedSlotId": "date-2026-05-01-1330"
-          },
-          {
-            "name": "Simpson Lee",
-            "email": "simpsonts.lee@hkexpress.com",
-            "staffNumber": "1937",
-            "preferredDateIds": [
-              "date-2026-05-01",
-              "date-2026-05-29"
-            ],
-            "preferences": [
-              "date-2026-05-01-0930",
-              "date-2026-05-01-1030",
-              "date-2026-05-29-1630"
-            ],
-            "allUnavailable": false,
-            "id": "sub-1773274199555-679jdbg",
-            "emailSent": true,
-            "submittedAt": "2026-03-12T00:09:59.555Z",
-            "assignedSlotId": "date-2026-05-01-0930"
-          },
-          {
-            "name": "testing",
-            "email": "uoengep@hkexpress.com",
-            "staffNumber": "0001",
-            "preferredDateIds": [
-              "date-2026-05-01",
-              "date-2026-05-20"
-            ],
-            "preferences": [
-              "date-2026-05-01-0930",
-              "date-2026-05-01-1030",
-              "date-2026-05-20-1430"
-            ],
-            "furtherEnquiries": "late",
-            "allUnavailable": false,
-            "id": "sub-1773275842467-suyxflo",
-            "emailSent": true,
-            "submittedAt": "2026-03-12T00:37:22.467Z",
-            "assignedSlotId": "date-2026-05-01-0930"
-          },
-          {
-            "name": "cos",
-            "email": "uoengcos@hkexpress.com",
-            "staffNumber": "9999",
-            "preferredDateIds": [],
-            "preferences": [],
-            "furtherEnquiries": ".",
-            "allUnavailable": true,
-            "unavailableReason": ".",
-            "alternateRequest": ".",
-            "id": "sub-1773275860058-j27wu80",
-            "emailSent": true,
-            "submittedAt": "2026-03-12T00:37:40.058Z"
-          },
-          {
-            "name": "Lee",
-            "email": "simpsonlee71@gmail.com",
-            "staffNumber": "0000",
-            "preferredDateIds": [
-              "date-2026-05-01",
-              "date-2026-05-12"
-            ],
-            "preferences": [
-              "date-2026-05-01-1030",
-              "date-2026-05-01-0930",
-              "date-2026-05-12-1430"
-            ],
-            "allUnavailable": false,
-            "id": "sub-1773275878983-u1v9gc6",
-            "emailSent": true,
-            "submittedAt": "2026-03-12T00:37:58.983Z",
-            "assignedSlotId": "date-2026-05-01-0930"
-          }
-        ],
+        "submissions": [],
         "dateSlots": [
           {
             "id": "date-2026-05-01",
             "label": "Fri, May 1",
             "date": "2026-05-01",
-            "currentBookings": 4,
+            "currentBookings": 0,
             "maxBookings": 40
           },
           {
@@ -210,13 +119,6 @@
             "maxBookings": 40
           },
           {
-            "id": "date-2026-05-25",
-            "label": "Mon, May 25",
-            "date": "2026-05-25",
-            "currentBookings": 0,
-            "maxBookings": 40
-          },
-          {
             "id": "date-2026-05-26",
             "label": "Tue, May 26",
             "date": "2026-05-26",
@@ -253,7 +155,7 @@
             "label": "09:30 - 10:30",
             "startTime": "09:30",
             "endTime": "10:30",
-            "currentBookings": 3,
+            "currentBookings": 0,
             "maxBookings": 4
           },
           {
@@ -293,7 +195,7 @@
             "label": "13:30 - 14:30",
             "startTime": "13:30",
             "endTime": "14:30",
-            "currentBookings": 1,
+            "currentBookings": 0,
             "maxBookings": 4
           },
           {
@@ -1527,86 +1429,6 @@
             "maxBookings": 4
           },
           {
-            "id": "date-2026-05-25-0930",
-            "dateId": "date-2026-05-25",
-            "dateLabel": "Mon, May 25",
-            "label": "09:30 - 10:30",
-            "startTime": "09:30",
-            "endTime": "10:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-05-25-1030",
-            "dateId": "date-2026-05-25",
-            "dateLabel": "Mon, May 25",
-            "label": "10:30 - 11:30",
-            "startTime": "10:30",
-            "endTime": "11:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-05-25-1130",
-            "dateId": "date-2026-05-25",
-            "dateLabel": "Mon, May 25",
-            "label": "11:30 - 12:30",
-            "startTime": "11:30",
-            "endTime": "12:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-05-25-1230",
-            "dateId": "date-2026-05-25",
-            "dateLabel": "Mon, May 25",
-            "label": "12:30 - 13:30",
-            "startTime": "12:30",
-            "endTime": "13:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-05-25-1330",
-            "dateId": "date-2026-05-25",
-            "dateLabel": "Mon, May 25",
-            "label": "13:30 - 14:30",
-            "startTime": "13:30",
-            "endTime": "14:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-05-25-1430",
-            "dateId": "date-2026-05-25",
-            "dateLabel": "Mon, May 25",
-            "label": "14:30 - 15:30",
-            "startTime": "14:30",
-            "endTime": "15:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-05-25-1530",
-            "dateId": "date-2026-05-25",
-            "dateLabel": "Mon, May 25",
-            "label": "15:30 - 16:30",
-            "startTime": "15:30",
-            "endTime": "16:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
-            "id": "date-2026-05-25-1630",
-            "dateId": "date-2026-05-25",
-            "dateLabel": "Mon, May 25",
-            "label": "16:30 - 17:30",
-            "startTime": "16:30",
-            "endTime": "17:30",
-            "currentBookings": 0,
-            "maxBookings": 4
-          },
-          {
             "id": "date-2026-05-26-0930",
             "dateId": "date-2026-05-26",
             "dateLabel": "Tue, May 26",
@@ -1941,7 +1763,8 @@
           "endDate": "2026-05-30",
           "excludeDates": [
             "2026-04-30",
-            "2026-05-24"
+            "2026-05-24",
+            "2026-05-25"
           ],
           "startTime": "09:30",
           "endTime": "17:30",
@@ -1953,5 +1776,5 @@
     "activeSchedulerId": "scheduler-1773270223855-bjw0q",
     "adminPasscode": "hkUO@852"
   },
-  "updatedAt": "2026-03-12T00:48:59.698Z"
+  "updatedAt": "2026-03-12T00:49:42.385Z"
 }
