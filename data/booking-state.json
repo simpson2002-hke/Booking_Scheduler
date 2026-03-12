@@ -38,7 +38,7 @@
             ],
             "allUnavailable": false,
             "id": "sub-1773274199555-679jdbg",
-            "emailSent": false,
+            "emailSent": true,
             "submittedAt": "2026-03-12T00:09:59.555Z",
             "assignedSlotId": "date-2026-05-01-0930"
           },
@@ -58,7 +58,7 @@
             "furtherEnquiries": "late",
             "allUnavailable": false,
             "id": "sub-1773275842467-suyxflo",
-            "emailSent": false,
+            "emailSent": true,
             "submittedAt": "2026-03-12T00:37:22.467Z",
             "assignedSlotId": "date-2026-05-01-0930"
           },
@@ -91,7 +91,7 @@
             ],
             "allUnavailable": false,
             "id": "sub-1773275878983-u1v9gc6",
-            "emailSent": false,
+            "emailSent": true,
             "submittedAt": "2026-03-12T00:37:58.983Z",
             "assignedSlotId": "date-2026-05-01-0930"
           }
@@ -1953,5 +1953,5 @@
     "activeSchedulerId": "scheduler-1773270223855-bjw0q",
     "adminPasscode": "hkUO@852"
   },
-  "updatedAt": "2026-03-12T00:46:29.520Z"
+  "updatedAt": "2026-03-12T00:46:35.070Z"
 }
