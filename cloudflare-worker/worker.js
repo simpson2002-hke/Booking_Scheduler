@@ -43,6 +43,10 @@ const isAuthorized = (request, env) => {
     return true;
   }
 
+  if (!env.API_KEY) {
+    return false;
+  }
+
   const authHeader = request.headers.get('Authorization');
   if (!authHeader) {
     return false;
