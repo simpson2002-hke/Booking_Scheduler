@@ -1755,7 +1755,7 @@
         "emailTemplateBody": "Hello {{name}},\n\nYour EFB Replacement booking has been confirmed for {{slot}}.\nPlease come to FOP Office, Cathay House on time according to your assigned timeslot. \n\nIf you have any further enquiries, please let us know.\n\nThank you very much,",
         "config": {
           "id": "config-1773270223853",
-          "name": "Default Schedule",
+          "name": "Schedule 1",
           "maxSubmissions": 300,
           "slotMaxBookings": 4,
           "preferenceLimit": 5,
@@ -1776,5 +1776,5 @@
     "activeSchedulerId": "scheduler-1773270223855-bjw0q",
     "adminPasscode": "hkUO@852"
   },
-  "updatedAt": "2026-03-12T01:29:07.602Z"
+  "updatedAt": "2026-03-12T01:29:28.244Z"
 }
