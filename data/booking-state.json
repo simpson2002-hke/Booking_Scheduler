@@ -92,7 +92,8 @@
             "allUnavailable": false,
             "id": "sub-1773275878983-u1v9gc6",
             "emailSent": false,
-            "submittedAt": "2026-03-12T00:37:58.983Z"
+            "submittedAt": "2026-03-12T00:37:58.983Z",
+            "assignedSlotId": "date-2026-05-01-0930"
           }
         ],
         "dateSlots": [
@@ -100,7 +101,7 @@
             "id": "date-2026-05-01",
             "label": "Fri, May 1",
             "date": "2026-05-01",
-            "currentBookings": 5,
+            "currentBookings": 4,
             "maxBookings": 40
           },
           {
@@ -149,7 +150,7 @@
             "id": "date-2026-05-12",
             "label": "Tue, May 12",
             "date": "2026-05-12",
-            "currentBookings": 1,
+            "currentBookings": 0,
             "maxBookings": 40
           },
           {
@@ -262,7 +263,7 @@
             "label": "10:30 - 11:30",
             "startTime": "10:30",
             "endTime": "11:30",
-            "currentBookings": 1,
+            "currentBookings": 0,
             "maxBookings": 4
           },
           {
@@ -862,7 +863,7 @@
             "label": "14:30 - 15:30",
             "startTime": "14:30",
             "endTime": "15:30",
-            "currentBookings": 1,
+            "currentBookings": 0,
             "maxBookings": 4
           },
           {
@@ -1952,5 +1953,5 @@
     "activeSchedulerId": "scheduler-1773270223855-bjw0q",
     "adminPasscode": "hkUO@852"
   },
-  "updatedAt": "2026-03-12T00:46:04.180Z"
+  "updatedAt": "2026-03-12T00:46:29.520Z"
 }
