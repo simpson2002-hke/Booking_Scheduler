@@ -71,7 +71,7 @@
             "unavailableReason": ".",
             "alternateRequest": ".",
             "id": "sub-1773275860058-j27wu80",
-            "emailSent": false,
+            "emailSent": true,
             "submittedAt": "2026-03-12T00:37:40.058Z"
           },
           {
@@ -1950,5 +1950,5 @@
     "activeSchedulerId": "scheduler-1773270223855-bjw0q",
     "adminPasscode": "hkUO@852"
   },
-  "updatedAt": "2026-03-12T00:37:58.075Z"
+  "updatedAt": "2026-03-12T00:45:16.199Z"
 }
