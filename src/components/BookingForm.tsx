@@ -26,13 +26,13 @@ export function BookingForm({
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [staffNumber, setStaffNumber] = useState('');
-  const [selectedDateIds, setSelectedDateIds] = useState<string[]>([]);
+  const [selectedDateId, setSelectedDateId] = useState<string | null>(null);
   const [selectedSlots, setSelectedSlots] = useState<string[]>([]);
   const [furtherEnquiries, setFurtherEnquiries] = useState('');
   const [allUnavailable, setAllUnavailable] = useState(false);
   const [unavailableReason, setUnavailableReason] = useState('');
   const [alternateRequest, setAlternateRequest] = useState('');
-  const [primaryDateId, setPrimaryDateId] = useState<string | null>(null);
+  const [buyCurrentIpad, setBuyCurrentIpad] = useState<'yes' | 'no' | ''>('');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -49,13 +49,15 @@ export function BookingForm({
         setEmail(draft.email ?? '');
         setStaffNumber(draft.staffNumber ?? '');
         const restoredDateIds = draft.selectedDateIds ?? [];
-        setSelectedDateIds(restoredDateIds);
+        const restoredPrimaryDateId = draft.selectedDateId ?? draft.primaryDateId ?? restoredDateIds[0] ?? null;
+        setSelectedDateId(restoredPrimaryDateId);
         setSelectedSlots(draft.selectedSlots ?? []);
         setFurtherEnquiries(draft.furtherEnquiries ?? '');
         setAllUnavailable(draft.allUnavailable ?? false);
         setUnavailableReason(draft.unavailableReason ?? '');
         setAlternateRequest(draft.alternateRequest ?? '');
-        setPrimaryDateId(draft.primaryDateId ?? restoredDateIds[0] ?? null);
+        setBuyCurrentIpad(draft.buyCurrentIpad ?? '');
+
       } catch {
         localStorage.removeItem(draftKey);
       }
@@ -67,29 +69,31 @@ export function BookingForm({
       name,
       email,
       staffNumber,
-      selectedDateIds,
+      selectedDateIds: selectedDateId ? [selectedDateId] : [],
+      selectedDateId,
       selectedSlots,
       furtherEnquiries,
       allUnavailable,
       unavailableReason,
       alternateRequest,
-      primaryDateId,
+      buyCurrentIpad,
     };
     localStorage.setItem(draftKey, JSON.stringify(draft));
   }, [
     name,
     email,
     staffNumber,
-    selectedDateIds,
+    selectedDateId,
     selectedSlots,
     furtherEnquiries,
     allUnavailable,
     unavailableReason,
     alternateRequest,
+    buyCurrentIpad,
   ]);
   const filteredSlots = useMemo(
-    () => dateTimeSlots.filter((slot) => selectedDateIds.includes(slot.dateId)),
-    [dateTimeSlots, selectedDateIds]
+    () => (selectedDateId ? dateTimeSlots.filter((slot) => slot.dateId === selectedDateId) : []),
+    [dateTimeSlots, selectedDateId]
   );
 
   const handleSlotSelect = (slotId: string) => {
@@ -107,7 +111,7 @@ export function BookingForm({
       if (prev.includes(slotId)) {
         return prev.filter((id) => id !== slotId);
       }
-      if (prev.length < 3) {
+      if (prev.length < 1) {
         return [...prev, slotId];
       }
       return prev;
@@ -115,14 +119,13 @@ export function BookingForm({
     setErrors((prev) => ({ ...prev, slots: '' }));
   };
 
-  const handleToggleDate = (dateId: string) => {
+  const handleSelectDate = (dateId: string) => {
     if (dateId === 'all-unavailable') {
       setAllUnavailable((prev) => {
         const next = !prev;
         if (next) {
-          setSelectedDateIds([]);
+          setSelectedDateId(null);
           setSelectedSlots([]);
-          setPrimaryDateId(null);
         }
         return next;
       });
@@ -131,20 +134,20 @@ export function BookingForm({
     }
 
     setAllUnavailable(false);
-    setSelectedDateIds((prev) => {
-      if (prev.includes(dateId)) {
-        const next = prev.filter((id) => id !== dateId);
+    setSelectedDateId((prev) => {
+      if (prev === dateId) {
         const slotsToRemove = dateTimeSlots
           .filter((slot) => slot.dateId === dateId)
           .map((slot) => slot.id);
         setSelectedSlots((current) => current.filter((id) => !slotsToRemove.includes(id)));
-        if (primaryDateId === dateId) {
-          setPrimaryDateId(next[0] ?? null);
-        }
-        return next;
+        return null;
       }
-      setPrimaryDateId(dateId);
-      return [...prev, dateId];
+
+      const slotsToRemove = dateTimeSlots
+        .filter((slot) => slot.dateId !== dateId)
+        .map((slot) => slot.id);
+      setSelectedSlots((current) => current.filter((id) => !slotsToRemove.includes(id)));
+      return dateId;
     });
     setErrors((prev) => ({ ...prev, dates: '' }));
   };
@@ -168,8 +171,8 @@ export function BookingForm({
       newErrors.staffNumber = 'Staff number must contain digits only';
     }
 
-    if (!allUnavailable && selectedDateIds.length === 0) {
-      newErrors.dates = 'Please select at least one preferred date or choose all unavailable';
+    if (!allUnavailable && !selectedDateId) {
+      newErrors.dates = 'Please select a preferred date or choose all unavailable';
     }
 
     if (allUnavailable) {
@@ -179,8 +182,12 @@ export function BookingForm({
       if (!alternateRequest.trim()) {
         newErrors.alternateRequest = 'Please provide a preferred date/time request';
       }
-    } else if (selectedSlots.length !== 3) {
-      newErrors.slots = 'Please select exactly 3 preferred time slots';
+    } else if (selectedSlots.length !== 1) {
+      newErrors.slots = 'Please select exactly 1 preferred time slot';
+    }
+
+    if (!buyCurrentIpad) {
+      newErrors.buyCurrentIpad = 'Please select whether you want to buy your current iPad';
     }
 
     setErrors(newErrors);
@@ -223,12 +230,13 @@ export function BookingForm({
       name: name.trim(),
       email: email.trim(),
       staffNumber: staffNumber.trim(),
-      preferredDateIds: selectedDateIds,
+      preferredDateIds: selectedDateId ? [selectedDateId] : [],
       preferences: selectedSlots,
       furtherEnquiries: furtherEnquiries.trim() || undefined,
       allUnavailable,
       unavailableReason: allUnavailable ? unavailableReason.trim() : undefined,
       alternateRequest: allUnavailable ? alternateRequest.trim() : undefined,
+      buyCurrentIpad: buyCurrentIpad || undefined,
     });
 
     localStorage.removeItem(draftKey);
@@ -261,6 +269,7 @@ export function BookingForm({
                   <p><span className="text-slate-500">Name:</span> <span className="font-medium">{name}</span></p>
                   <p><span className="text-slate-500">Email:</span> <span className="font-medium">{email}</span></p>
                   <p><span className="text-slate-500">Staff number:</span> <span className="font-medium">{staffNumber}</span></p>
+                  <p><span className="text-slate-500">Buy current iPad:</span> <span className="font-medium">{buyCurrentIpad === 'yes' ? 'Yes' : 'No'}</span></p>
                 </div>
               </div>
 
@@ -274,7 +283,7 @@ export function BookingForm({
                 </div>
               ) : (
                 <div className="bg-slate-50 rounded-xl p-4">
-                  <h3 className="font-semibold text-slate-700 mb-3">Your Top 3 Time Slot Preferences</h3>
+                  <h3 className="font-semibold text-slate-700 mb-3">Your Preferred Time Slot</h3>
                   <ol className="space-y-2">
                     {selectedSlotsData.map((slot, index) => (
                       <li key={slot.id} className="flex items-start gap-3">
@@ -347,7 +356,7 @@ export function BookingForm({
         </p>
         <div className="bg-slate-50 rounded-xl p-4 mb-6 text-left">
           <div>
-            <h3 className="font-semibold text-slate-700 mb-2">Your Top 3 Time Slot Preferences</h3>
+            <h3 className="font-semibold text-slate-700 mb-2">Your Preferred Time Slot</h3>
             <ol className="space-y-2">
               {submittedSlotsData.map((slot, index) => (
                 <li key={slot.id} className="flex items-start gap-2">
@@ -483,15 +492,15 @@ export function BookingForm({
       <div className="pt-4 border-t border-slate-200">
         <DateSlotSelector
           dateSlots={dateSlots}
-          selectedDateIds={selectedDateIds}
+          selectedDateId={selectedDateId}
           allUnavailable={allUnavailable}
-          onToggleDate={handleToggleDate}
+          onSelectDate={handleSelectDate}
         />
         {errors.dates && (
           <p className="mt-2 text-sm text-red-600">{errors.dates}</p>
         )}
         <p className="mt-2 text-xs text-slate-500">
-          Preferred date selection is required unless you select “All dates unavailable”.
+          A preferred date selection is required unless you select “All dates unavailable”.
         </p>
       </div>
 
@@ -542,19 +551,19 @@ export function BookingForm({
         </div>
       ) : (
         <div className="pt-4 border-t border-slate-200">
-          {selectedDateIds.length === 0 ? (
+          {!selectedDateId ? (
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-600">
-              Select at least one preferred date above to see the available time slots.
+              Select a preferred date above to see the available time slots.
             </div>
           ) : (
             <TimeSlotSelector
               timeSlots={filteredSlots}
               selectedSlots={selectedSlots}
-              selectedDateIds={selectedDateIds}
-              primaryDateId={primaryDateId}
+              selectedDateIds={selectedDateId ? [selectedDateId] : []}
+              primaryDateId={selectedDateId}
               onSelectSlot={handleSlotSelect}
               onClearSelections={() => setSelectedSlots([])}
-              maxSelections={3}
+              maxSelections={1}
               preferenceLimit={preferenceLimit}
             />
           )}
@@ -563,6 +572,34 @@ export function BookingForm({
           )}
         </div>
       )}
+
+
+      <div className="pt-4 border-t border-slate-200 space-y-2">
+        <label className="block text-sm font-medium text-slate-700">
+          Do you want to buy your current iPad? <span className="text-red-500">*</span>
+        </label>
+        <div className="flex flex-wrap gap-4">
+          {(['yes', 'no'] as const).map((option) => (
+            <label key={option} className="inline-flex items-center gap-2 text-sm text-slate-700">
+              <input
+                type="radio"
+                name="buyCurrentIpad"
+                value={option}
+                checked={buyCurrentIpad === option}
+                onChange={(event) => {
+                  setBuyCurrentIpad(event.target.value as 'yes' | 'no');
+                  setErrors((prev) => ({ ...prev, buyCurrentIpad: '' }));
+                }}
+                className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <span className="capitalize">{option}</span>
+            </label>
+          ))}
+        </div>
+        {errors.buyCurrentIpad && (
+          <p className="text-sm text-red-600">{errors.buyCurrentIpad}</p>
+        )}
+      </div>
 
       <div className="pt-4 border-t border-slate-200 space-y-2">
         <label htmlFor="enquiries" className="block text-sm font-medium text-slate-700">

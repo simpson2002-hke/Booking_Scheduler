@@ -126,24 +126,30 @@ export function TimeSlotSelector({
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h3 className="text-lg sm:text-xl font-semibold text-slate-800">
-            Select Your Top {maxSelections} Preferred Time Slots
+            Select Your Preferred Time Slot
           </h3>
           <p className="text-sm sm:text-base text-slate-600">
-            You can select time slots across different dates. Click in order of preference. Each slot accepts up to {preferenceLimit} preference requests.
+            Select one time slot for the selected date. Each slot accepts up to {preferenceLimit} preference requests.
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 font-medium">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-              Preference 1 (most preferred)
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 font-medium">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-              Preference 2
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-100 text-rose-700 font-medium">
-              <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-              Preference 3 (least preferred)
-            </span>
+            {maxSelections >= 1 && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 font-medium">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                Preference 1 {maxSelections > 1 ? '(most preferred)' : ''}
+              </span>
+            )}
+            {maxSelections >= 2 && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 font-medium">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                Preference 2
+              </span>
+            )}
+            {maxSelections >= 3 && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-100 text-rose-700 font-medium">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                Preference 3 (least preferred)
+              </span>
+            )}
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-3">

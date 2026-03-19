@@ -21,6 +21,7 @@ interface AdminPanelProps {
 type AdminTab = 'overview' | 'submissions' | 'email' | 'settings';
 type PreferenceFilter = '' | '1' | '2' | '3' | 'all-unavailable';
 type StatusFilter = '' | 'pending' | 'assigned' | 'email-sent' | 'all-unavailable';
+type BuyIpadFilter = '' | 'yes' | 'no';
 
 type PreferenceEntry = {
   slot: DateTimeSlot;
@@ -99,6 +100,44 @@ const getSubmissionStatus = (submission: BookingSubmission): StatusMeta => {
 const buildMailto = (emails: string[], subject: string, body: string) =>
   `mailto:${emails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+const escapeXml = (value: string) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+
+const buildExcelCell = (value: string) => `<Cell><Data ss:Type="String">${escapeXml(value)}</Data></Cell>`;
+
+const downloadExcelWorkbook = (headers: string[], rows: string[][], filename: string) => {
+  const worksheetRows = [headers, ...rows]
+    .map((row) => `<Row>${row.map((value) => buildExcelCell(value)).join('')}</Row>`)
+    .join('');
+
+  const workbook = `<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <Worksheet ss:Name="Submissions">
+  <Table>${worksheetRows}</Table>
+ </Worksheet>
+</Workbook>`;
+
+  const blob = new Blob([workbook], { type: 'application/vnd.ms-excel;charset=utf-8;' });
+  const url = window.URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  window.URL.revokeObjectURL(url);
+};
+
 const buildConfigDateOptions = (config: SchedulerConfig) => {
   if (!config.startDate || !config.endDate) {
     return [] as string[];
@@ -139,6 +178,7 @@ export function AdminPanel({
   const [filterSlot, setFilterSlot] = useState('');
   const [filterPreference, setFilterPreference] = useState<PreferenceFilter>('');
   const [filterStatus, setFilterStatus] = useState<StatusFilter>('');
+  const [filterBuyIpad, setFilterBuyIpad] = useState<BuyIpadFilter>('');
   const [selectedSubmissionIds, setSelectedSubmissionIds] = useState<string[]>([]);
   const [selectedOverviewDateId, setSelectedOverviewDateId] = useState(scheduler.dateSlots[0]?.id ?? '');
   const [selectedOverviewSlotId, setSelectedOverviewSlotId] = useState('');
@@ -276,11 +316,19 @@ export function AdminPanel({
       }
 
       if (filterPreference === 'all-unavailable') {
-        return submission.allUnavailable;
+        if (!submission.allUnavailable) {
+          return false;
+        }
+      }
+
+      if (filterBuyIpad && submission.buyCurrentIpad !== filterBuyIpad) {
+        return false;
       }
 
       if (submission.allUnavailable) {
-        return !filterDate && !filterSlot && !filterPreference;
+        return filterPreference === 'all-unavailable'
+          ? !filterDate && !filterSlot
+          : !filterDate && !filterSlot && !filterPreference;
       }
 
       let entries = getPreferenceEntries(submission);
@@ -296,7 +344,7 @@ export function AdminPanel({
 
       return entries.length > 0 || (!filterDate && !filterSlot && !filterPreference);
     });
-  }, [filterDate, filterPreference, filterSlot, filterStatus, submissions, slotById]);
+  }, [filterDate, filterPreference, filterSlot, filterStatus, filterBuyIpad, submissions, slotById]);
 
   const totalSlotCapacity = dateTimeSlots.reduce((sum, slot) => sum + slot.maxBookings, 0);
   const remainingSlotCapacity = dateTimeSlots.reduce(
@@ -415,6 +463,64 @@ export function AdminPanel({
     );
 
     selectedSubmissions.forEach((submission) => onMarkEmailSent(submission.id));
+  };
+
+  const handleExportFilteredSubmissions = () => {
+    if (filteredSubmissions.length === 0) {
+      window.alert('There are no filtered submissions to export.');
+      return;
+    }
+
+    const headers = [
+      'Name',
+      'Staff #',
+      'Email',
+      'Buy iPad',
+      'Status',
+      'Preferred Dates',
+      'Preferred Slots',
+      'Assigned Slot',
+      'All Unavailable',
+      'Unavailable Reason',
+      'Alternate Request',
+      'Further Enquiries',
+      'Submitted At',
+    ];
+
+    const rows = filteredSubmissions.map((submission) => {
+      const status = getSubmissionStatus(submission);
+      const visibleEntries = getVisiblePreferenceEntries(submission);
+      const visibleDates = getVisiblePreferredDates(submission);
+      const assignedSlot = submission.assignedSlotId ? slotById[submission.assignedSlotId] : undefined;
+
+      return [
+        submission.name,
+        submission.staffNumber,
+        submission.email,
+        submission.buyCurrentIpad ? submission.buyCurrentIpad.toUpperCase() : '—',
+        status.label,
+        submission.allUnavailable
+          ? 'All unavailable'
+          : visibleDates.length > 0
+            ? visibleDates.map((date) => `${date.label} (${date.ranks.map((rank) => `P${rank}`).join(', ')})`).join('; ')
+            : '—',
+        submission.allUnavailable
+          ? 'All unavailable'
+          : visibleEntries.length > 0
+            ? visibleEntries.map((entry) => `P${entry.preference}: ${formatSlotLabel(entry.slot)}`).join('; ')
+            : '—',
+        assignedSlot ? formatSlotLabel(assignedSlot) : 'Not assigned',
+        submission.allUnavailable ? 'Yes' : 'No',
+        submission.unavailableReason?.trim() || '—',
+        submission.alternateRequest?.trim() || '—',
+        submission.furtherEnquiries?.trim() || '—',
+        new Date(submission.submittedAt).toLocaleString('en-US'),
+      ];
+    });
+
+    const safeSchedulerName = scheduler.name.replace(/[^a-z0-9]+/gi, '-').replace(/^-+|-+$/g, '') || 'schedule';
+    const today = new Date().toISOString().split('T')[0];
+    downloadExcelWorkbook(headers, rows, `${safeSchedulerName}-submissions-${today}.xls`);
   };
 
   const handleToggleExcludeDate = (date: string) => {
@@ -677,7 +783,7 @@ export function AdminPanel({
         {activeTab === 'submissions' && (
           <div className="space-y-6">
             <section className="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
-              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
                 <div>
                   <label className="mb-1 block text-sm font-medium text-slate-700">Filter by date</label>
                   <select
@@ -726,6 +832,18 @@ export function AdminPanel({
                   </select>
                 </div>
                 <div>
+                  <label className="mb-1 block text-sm font-medium text-slate-700">Buy current iPad</label>
+                  <select
+                    value={filterBuyIpad}
+                    onChange={(event) => setFilterBuyIpad(event.target.value as BuyIpadFilter)}
+                    className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm"
+                  >
+                    <option value="">All responses</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+                <div>
                   <label className="mb-1 block text-sm font-medium text-slate-700">Filter by status</label>
                   <select
                     value={filterStatus}
@@ -769,12 +887,28 @@ export function AdminPanel({
                 >
                   Send group email
                 </button>
+                <button
+                  type="button"
+                  onClick={handleExportFilteredSubmissions}
+                  disabled={filteredSubmissions.length === 0}
+                  className={cn(
+                    'rounded-xl px-3 py-2 text-sm font-semibold transition-colors',
+                    filteredSubmissions.length > 0
+                      ? 'bg-emerald-600 text-white hover:bg-emerald-700'
+                      : 'cursor-not-allowed bg-slate-200 text-slate-500'
+                  )}
+                >
+                  Export to Excel
+                </button>
               </div>
 
               <p className="mt-3 text-sm text-slate-500">
                 {canSendSelected
                   ? `Selected applicants share ${selectedGroupSlot ? formatSlotLabel(selectedGroupSlot) : 'the same assigned slot'}.`
                   : 'Group email is available only when all selected applicants are assigned to the same slot.'}
+              </p>
+              <p className="mt-1 text-sm text-slate-500">
+                Export downloads only the submissions currently visible after applying the filters above.
               </p>
             </section>
 
@@ -806,6 +940,7 @@ export function AdminPanel({
                       <th className="px-3 py-2 font-semibold">Name</th>
                       <th className="px-3 py-2 font-semibold">Staff #</th>
                       <th className="px-3 py-2 font-semibold">Email</th>
+                      <th className="px-3 py-2 font-semibold">Buy iPad</th>
                       <th className="px-3 py-2 font-semibold">Status</th>
                       <th className="px-3 py-2 font-semibold">Preferred Dates</th>
                       <th className="px-3 py-2 font-semibold">Preferred Slots</th>
@@ -840,6 +975,7 @@ export function AdminPanel({
                           <td className="px-3 py-2 font-medium text-slate-800">{submission.name}</td>
                           <td className="px-3 py-2 text-slate-600">{submission.staffNumber}</td>
                           <td className="px-3 py-2 text-slate-600">{submission.email}</td>
+                          <td className="px-3 py-2 text-slate-600">{submission.buyCurrentIpad ? submission.buyCurrentIpad.toUpperCase() : '—'}</td>
                           <td className="px-3 py-2">
                             <span className={cn('rounded-full border px-2 py-0.5 text-xs font-semibold', status.tone)}>
                               {status.label}
